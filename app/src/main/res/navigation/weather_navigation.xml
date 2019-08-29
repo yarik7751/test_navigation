@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/weather_navigation" app:startDestination="@id/cityFragment">
+            android:id="@+id/weather_navigation" app:startDestination="@+id/cityFragment">
 
     <fragment android:id="@+id/cityFragment" android:name="by.yarik.test_navigation.fragments.weather.city.CityFragment"
               android:label="CityFragment">
+
         <action android:id="@+id/action_cityFragment_to_weatherParamsFragment"
-                app:destination="@id/weatherParamsFragment"/>
+                app:destination="@id/weatherParamsFragment">
+
+            <argument android:name="weatherType" app:argType="string" android:defaultValue="weather"/>
+        </action>
     </fragment>
+
     <fragment android:id="@+id/weatherParamsFragment"
               android:name="by.yarik.test_navigation.fragments.weather.WeatherParamsFragment"
               android:label="WeatherParamsFragment"/>
