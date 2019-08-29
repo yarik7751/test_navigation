@@ -1,6 +1,8 @@
 package by.yarik.test_navigation.activity.main
 
+import android.content.DialogInterface
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -22,6 +24,25 @@ class MainActivity : AppCompatActivity(), MainNavigation {
     }
 
     override fun userInfoBack() {
+        showFinishDialog()
+    }
+
+    private fun showFinishDialog() {
+        val dialogBuilder = AlertDialog.Builder(this)
+        dialogBuilder.setTitle(R.string.finish_dialog_title)
+        dialogBuilder.setMessage(R.string.finish_dialog_message)
+        dialogBuilder.setNegativeButton(R.string.cancel, object: DialogInterface.OnClickListener {
+            override fun onClick(dialog: DialogInterface?, p1: Int) {
+                dialog?.dismiss()
+            }
+        })
+        dialogBuilder.setPositiveButton(R.string.ok, object: DialogInterface.OnClickListener {
+            override fun onClick(dialog: DialogInterface?, p1: Int) {
+                finish()
+            }
+        })
+
+        dialogBuilder.create().show()
     }
 
     override fun settingsNext() {

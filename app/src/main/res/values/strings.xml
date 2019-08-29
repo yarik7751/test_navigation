@@ -2,4 +2,8 @@
     <string name="app_name">test_navigation</string>
     <string name="back">Back</string>
     <string name="next">Next</string>
+    <string name="finish_dialog_title">Exit</string>
+    <string name="finish_dialog_message">Are you sure?</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
 </resources>
