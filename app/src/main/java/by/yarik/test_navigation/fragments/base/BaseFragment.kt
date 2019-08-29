@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
-import by.yarik.test_navigation.fragments.activity.MainNavigation
+import by.yarik.test_navigation.activity.base.BaseNavigation
 
-abstract class BaseFragment: Fragment() {
+abstract class BaseFragment<N: BaseNavigation>: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(layoutRes(), container, false)
@@ -19,10 +19,10 @@ abstract class BaseFragment: Fragment() {
         initViews(savedInstanceState)
     }
 
-    abstract fun initViews(savedInstanceState: Bundle?)
-
     @LayoutRes
     abstract fun layoutRes(): Int
 
-    protected fun getMainNavigation(): MainNavigation? = activity as MainNavigation
+    abstract fun initViews(savedInstanceState: Bundle?)
+
+    protected fun getNavigation(): N? = activity as N
 }

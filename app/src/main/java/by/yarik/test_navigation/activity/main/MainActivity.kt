@@ -1,4 +1,4 @@
-package by.yarik.test_navigation.fragments.activity
+package by.yarik.test_navigation.activity.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity(), MainNavigation {
     }
 
     override fun settingsNext() {
+        navController.navigate(R.id.action_settingsFragment_to_weatherActivity)
     }
 
     override fun settingsBack() {
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity(), MainNavigation {
     }
 
     override fun currenciesNext() {
-        navController.navigate(R.id.settingsFragment)
+        navController.navigate(R.id.action_currenciesFragment_to_settingsFragment)
     }
 
     override fun currenciesBack() {
