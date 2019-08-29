@@ -21,9 +21,12 @@ class CityAdapter(
 
     override fun onBindViewHolder(holder: CityViewHolder, position: Int) {
         val item = cityItems[position]
-        holder.tvCity.text = item.title
-        holder.tvCity.setOnClickListener {
-            onCityClick(item)
+
+        holder.tvCity.apply {
+            text = item.title
+            setOnClickListener {
+                onCityClick(item)
+            }
         }
     }
 

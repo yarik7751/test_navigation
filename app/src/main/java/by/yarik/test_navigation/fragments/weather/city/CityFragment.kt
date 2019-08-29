@@ -33,9 +33,11 @@ class CityFragment: BaseFragment<WeatherNavigation>() {
     }
 
     private fun initCities() {
-        rvCities.layoutManager = LinearLayoutManager(context)
-        rvCities.adapter = CityAdapter(cityModels) {
-            getNavigation()?.cityNext(it)
+        rvCities.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = CityAdapter(cityModels) {
+                getNavigation()?.cityNext(it)
+            }
         }
     }
 }
