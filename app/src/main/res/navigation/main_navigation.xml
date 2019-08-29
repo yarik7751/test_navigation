@@ -4,7 +4,10 @@
             android:id="@+id/main_navigation" app:startDestination="@id/userInfoFragment">
 
     <fragment android:id="@+id/userInfoFragment" android:name="by.yarik.test_navigation.fragments.UserInfoFragment"
-              android:label="UserInfoFragment"/>
+              android:label="UserInfoFragment">
+        <action android:id="@+id/action_userInfoFragment_to_currenciesFragment"
+                app:destination="@id/currenciesFragment"/>
+    </fragment>
     <fragment android:id="@+id/settingsFragment" android:name="by.yarik.test_navigation.fragments.SettingsFragment"
               android:label="SettingsFragment"/>
     <fragment android:id="@+id/currenciesFragment" android:name="by.yarik.test_navigation.fragments.CurrenciesFragment"

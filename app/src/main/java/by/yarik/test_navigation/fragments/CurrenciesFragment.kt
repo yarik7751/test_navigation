@@ -6,11 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import by.yarik.test_navigation.R
+import by.yarik.test_navigation.fragments.base.BaseFragment
+import kotlinx.android.synthetic.main.fragment_currencies.*
 
-class CurrenciesFragment: Fragment() {
+class CurrenciesFragment: BaseFragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_currencies, container, false)
-        return view
+    override fun layoutRes(): Int = R.layout.fragment_currencies
+
+    override fun initViews(savedInstanceState: Bundle?) {
+
+        btnNext.setOnClickListener {
+            getMainNavigation()?.currenciesNext()
+        }
+
+        btnBack.setOnClickListener {
+            getMainNavigation()?.currenciesBack()
+        }
     }
 }
