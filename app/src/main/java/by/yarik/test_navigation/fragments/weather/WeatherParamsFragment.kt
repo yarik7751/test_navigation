@@ -4,13 +4,20 @@ import android.os.Bundle
 import by.yarik.test_navigation.R
 import by.yarik.test_navigation.activity.weather.WeatherNavigation
 import by.yarik.test_navigation.fragments.base.BaseFragment
+import by.yarik.test_navigation.fragments.weather.city.model.CityModel
 import kotlinx.android.synthetic.main.fragment_weather_params.*
 
 class WeatherParamsFragment: BaseFragment<WeatherNavigation>() {
 
+    companion object {
+        const val ARGS_CITY = "ARGS_CITY"
+    }
+
     override fun layoutRes(): Int = R.layout.fragment_weather_params
 
     override fun initViews(savedInstanceState: Bundle?) {
+
+        initTitle()
 
         btnNext.setOnClickListener {
             getNavigation()?.weatherParamsNext()
@@ -19,5 +26,17 @@ class WeatherParamsFragment: BaseFragment<WeatherNavigation>() {
         btnBack.setOnClickListener {
             getNavigation()?.weatherParamsBack()
         }
+    }
+
+    private fun initTitle() {
+        val title = getCityModel().title
+        tvCityTitle.text = title
+    }
+
+    private fun getCityModel(): CityModel {
+        return arguments?.let {
+            val model = it.getParcelable<CityModel>(ARGS_CITY)
+            model ?: CityModel()
+        } ?: CityModel()
     }
 }

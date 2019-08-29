@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import by.yarik.test_navigation.R
+import by.yarik.test_navigation.fragments.weather.WeatherParamsFragment
+import by.yarik.test_navigation.fragments.weather.city.model.CityModel
 
 class WeatherActivity: AppCompatActivity(), WeatherNavigation {
 
@@ -17,8 +19,10 @@ class WeatherActivity: AppCompatActivity(), WeatherNavigation {
         navController = Navigation.findNavController(this, R.id.navHostFragment)
     }
 
-    override fun cityNext() {
-        navController.navigate(R.id.weatherParamsFragment)
+    override fun cityNext(model: CityModel) {
+        val args = Bundle()
+        args.putParcelable(WeatherParamsFragment.ARGS_CITY, model)
+        navController.navigate(R.id.action_cityFragment_to_weatherParamsFragment, args)
     }
 
     override fun cityBack() {

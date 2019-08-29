@@ -3,8 +3,11 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/weather_navigation" app:startDestination="@id/cityFragment">
 
-    <fragment android:id="@+id/cityFragment" android:name="by.yarik.test_navigation.fragments.weather.CityFragment"
-              android:label="CityFragment"/>
+    <fragment android:id="@+id/cityFragment" android:name="by.yarik.test_navigation.fragments.weather.city.CityFragment"
+              android:label="CityFragment">
+        <action android:id="@+id/action_cityFragment_to_weatherParamsFragment"
+                app:destination="@id/weatherParamsFragment"/>
+    </fragment>
     <fragment android:id="@+id/weatherParamsFragment"
               android:name="by.yarik.test_navigation.fragments.weather.WeatherParamsFragment"
               android:label="WeatherParamsFragment"/>
