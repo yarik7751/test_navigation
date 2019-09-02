@@ -1,14 +1,14 @@
 package by.yarik.test_navigation.activity.weather
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import by.yarik.test_navigation.R
+import by.yarik.test_navigation.activity.base.BaseActivity
 import by.yarik.test_navigation.fragments.weather.WeatherParamsFragment
 import by.yarik.test_navigation.fragments.weather.city.model.CityModel
 
-class WeatherActivity: AppCompatActivity(), WeatherNavigation {
+class WeatherActivity: BaseActivity(), WeatherNavigation {
 
     lateinit var navController: NavController
 

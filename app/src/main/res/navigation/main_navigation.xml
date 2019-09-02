@@ -5,20 +5,34 @@
 
     <fragment android:id="@+id/userInfoFragment" android:name="by.yarik.test_navigation.fragments.main.UserInfoFragment"
               android:label="UserInfoFragment">
-        <action android:id="@+id/action_userInfoFragment_to_currenciesFragment"
+
+        <action
+                android:id="@+id/action_userInfoFragment_to_currenciesFragment"
                 app:destination="@id/currenciesFragment"/>
     </fragment>
+
     <fragment android:id="@+id/settingsFragment" android:name="by.yarik.test_navigation.fragments.main.SettingsFragment"
               android:label="SettingsFragment">
-        <action android:id="@+id/action_settingsFragment_to_weatherActivity" app:destination="@id/weatherActivity"/>
-        <action android:id="@+id/action_settingsFragment_to_userInfoFragment" app:destination="@id/userInfoFragment"
-        app:popUpTo="@id/userInfoFragment" app:popUpToInclusive="true"/>
+
+        <action
+                android:id="@+id/action_settingsFragment_to_weatherActivity"
+                app:destination="@id/weatherActivity"
+                app:launchSingleTop="true" />
+
+        <action
+                android:id="@+id/action_settingsFragment_to_userInfoFragment"
+                app:destination="@id/userInfoFragment"
+                app:popUpTo="@id/userInfoFragment"/>
     </fragment>
+
     <fragment android:id="@+id/currenciesFragment" android:name="by.yarik.test_navigation.fragments.main.CurrenciesFragment"
               android:label="CurrenciesFragment">
+
         <action android:id="@+id/action_currenciesFragment_to_settingsFragment" app:destination="@id/settingsFragment"/>
+
         <action android:id="@+id/action_currenciesFragment_to_userInfoFragment" app:destination="@id/userInfoFragment"/>
     </fragment>
+
     <activity android:id="@+id/weatherActivity" android:name="by.yarik.test_navigation.activity.weather.WeatherActivity"
               android:label="WeatherActivity"/>
 </navigation>

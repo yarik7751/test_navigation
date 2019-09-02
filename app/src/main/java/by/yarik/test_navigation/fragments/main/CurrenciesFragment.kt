@@ -10,6 +10,8 @@ class CurrenciesFragment: BaseFragment<MainNavigation>() {
 
     override fun layoutRes(): Int = R.layout.fragment_currencies
 
+    override fun titleRes(): Int = R.string.currencies_title
+
     override fun initViews(savedInstanceState: Bundle?) {
 
         btnNext.setOnClickListener {

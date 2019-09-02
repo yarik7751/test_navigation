@@ -10,6 +10,8 @@ class UserInfoFragment: BaseFragment<MainNavigation>() {
 
     override fun layoutRes(): Int = R.layout.fragment_user_info
 
+    override fun titleRes(): Int = R.string.user_info_title
+
     override fun initViews(savedInstanceState: Bundle?) {
 
         btnNext.setOnClickListener {

@@ -7,4 +7,9 @@
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="home">Home</string>
+    <string name="user_info_title">User Info</string>
+    <string name="currencies_title">Currencies</string>
+    <string name="settings_title">Settings</string>
+    <string name="city_title">City</string>
+    <string name="weather_params_title">Weather params</string>
 </resources>

@@ -3,12 +3,14 @@ package by.yarik.test_navigation.activity.main
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import by.yarik.test_navigation.R
+import by.yarik.test_navigation.activity.base.BaseActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), MainNavigation {
+class MainActivity : BaseActivity(), MainNavigation {
 
     lateinit var navController: NavController
 
@@ -17,6 +19,7 @@ class MainActivity : AppCompatActivity(), MainNavigation {
         setContentView(R.layout.activity_main)
 
         navController = Navigation.findNavController(this, R.id.navHostFragment)
+        NavigationUI.setupWithNavController(bottomNavigationView, navController)
     }
 
     override fun userInfoNext() {
@@ -50,7 +53,7 @@ class MainActivity : AppCompatActivity(), MainNavigation {
     }
 
     override fun settingsHome() {
-        navController.navigate(R.id.action_settingsFragment_to_userInfoFragment)
+        navController.popBackStack(R.id.userInfoFragment, false)
     }
 
     override fun settingsBack() {
@@ -62,7 +65,7 @@ class MainActivity : AppCompatActivity(), MainNavigation {
     }
 
     override fun currenciesHome() {
-        navController.navigate(R.id.action_currenciesFragment_to_userInfoFragment)
+        navController.popBackStack(R.id.userInfoFragment, false)
     }
 
     override fun currenciesBack() {

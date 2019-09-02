@@ -15,6 +15,8 @@ class WeatherParamsFragment: BaseFragment<WeatherNavigation>() {
 
     override fun layoutRes(): Int = R.layout.fragment_weather_params
 
+    override fun titleRes(): Int = R.string.weather_params_title
+
     override fun initViews(savedInstanceState: Bundle?) {
 
         initTitle()
