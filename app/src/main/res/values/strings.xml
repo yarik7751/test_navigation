@@ -6,4 +6,5 @@
     <string name="finish_dialog_message">Are you sure?</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
+    <string name="home">Home</string>
 </resources>

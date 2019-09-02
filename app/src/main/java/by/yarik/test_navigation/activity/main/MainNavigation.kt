@@ -10,9 +10,13 @@ interface MainNavigation: BaseNavigation {
 
     fun settingsNext()
 
+    fun settingsHome()
+
     fun settingsBack()
 
     fun currenciesNext()
+
+    fun currenciesHome()
 
     fun currenciesBack()
 }

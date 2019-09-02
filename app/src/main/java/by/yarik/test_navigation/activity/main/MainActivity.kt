@@ -49,12 +49,20 @@ class MainActivity : AppCompatActivity(), MainNavigation {
         navController.navigate(R.id.action_settingsFragment_to_weatherActivity)
     }
 
+    override fun settingsHome() {
+        navController.navigate(R.id.action_settingsFragment_to_userInfoFragment)
+    }
+
     override fun settingsBack() {
         navController.popBackStack()
     }
 
     override fun currenciesNext() {
         navController.navigate(R.id.action_currenciesFragment_to_settingsFragment)
+    }
+
+    override fun currenciesHome() {
+        navController.navigate(R.id.action_currenciesFragment_to_userInfoFragment)
     }
 
     override fun currenciesBack() {

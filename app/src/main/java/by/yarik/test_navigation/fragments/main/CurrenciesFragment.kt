@@ -19,5 +19,9 @@ class CurrenciesFragment: BaseFragment<MainNavigation>() {
         btnBack.setOnClickListener {
             getNavigation()?.currenciesBack()
         }
+
+        btnHome.setOnClickListener {
+            getNavigation()?.currenciesHome()
+        }
     }
 }

@@ -19,5 +19,9 @@ class SettingsFragment: BaseFragment<MainNavigation>() {
         btnBack.setOnClickListener {
             getNavigation()?.settingsBack()
         }
+
+        btnHome.setOnClickListener {
+            getNavigation()?.settingsHome()
+        }
     }
 }
