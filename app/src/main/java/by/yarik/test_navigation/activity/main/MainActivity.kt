@@ -1,6 +1,5 @@
 package by.yarik.test_navigation.activity.main
 
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.NavController
@@ -22,53 +21,21 @@ class MainActivity : BaseActivity(), MainNavigation {
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
     }
 
-    override fun userInfoNext() {
-        navController.navigate(R.id.action_userInfoFragment_to_currenciesFragment)
-    }
-
-    override fun userInfoBack() {
-        showFinishDialog()
-    }
-
     private fun showFinishDialog() {
         val dialogBuilder = AlertDialog.Builder(this)
         dialogBuilder.setTitle(R.string.finish_dialog_title)
         dialogBuilder.setMessage(R.string.finish_dialog_message)
-        dialogBuilder.setNegativeButton(R.string.cancel, object: DialogInterface.OnClickListener {
-            override fun onClick(dialog: DialogInterface?, p1: Int) {
-                dialog?.dismiss()
-            }
-        })
-        dialogBuilder.setPositiveButton(R.string.ok, object: DialogInterface.OnClickListener {
-            override fun onClick(dialog: DialogInterface?, p1: Int) {
-                finish()
-            }
-        })
+        dialogBuilder.setNegativeButton(R.string.cancel) { dialog, p1 ->
+            dialog?.dismiss()
+        }
+        dialogBuilder.setPositiveButton(R.string.ok) { dialog, p1 ->
+            finish()
+        }
 
         dialogBuilder.create().show()
     }
 
-    override fun settingsNext() {
-        navController.navigate(R.id.action_settingsFragment_to_weatherActivity)
-    }
-
-    override fun settingsHome() {
-        navController.popBackStack(R.id.userInfoFragment, false)
-    }
-
-    override fun settingsBack() {
-        navController.popBackStack()
-    }
-
-    override fun currenciesNext() {
-        navController.navigate(R.id.action_currenciesFragment_to_settingsFragment)
-    }
-
-    override fun currenciesHome() {
-        navController.popBackStack(R.id.userInfoFragment, false)
-    }
-
-    override fun currenciesBack() {
-        navController.popBackStack()
+    override fun openWeatherScreen() {
+        navController.navigate(R.id.weatherActivity)
     }
 }

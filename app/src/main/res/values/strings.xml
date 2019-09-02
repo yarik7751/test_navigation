@@ -12,4 +12,11 @@
     <string name="settings_title">Settings</string>
     <string name="city_title">City</string>
     <string name="weather_params_title">Weather params</string>
+    <string name="name_title">Name</string>
+    <string name="last_name_title">Last name</string>
+    <string name="age_title">Age</string>
+    <string name="currency_title">Currency</string>
+    <string name="purchase_title">Purchase</string>
+    <string name="sale_title">Sale</string>
+    <string name="open_weather">Open weather</string>
 </resources>
