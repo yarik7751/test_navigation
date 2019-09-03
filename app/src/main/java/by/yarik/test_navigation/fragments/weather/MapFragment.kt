@@ -13,13 +13,11 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import kotlinx.android.synthetic.main.fragment_map.*
 
-class MapFragment: BaseFragment<WeatherNavigation>(), OnMapReadyCallback {
+class MapFragment: BaseFragment<WeatherNavigation>(R.layout.fragment_map), OnMapReadyCallback {
 
     companion object {
         const val ARGS_CITY = "ARGS_CITY"
     }
-
-    override fun layoutRes(): Int = R.layout.fragment_map
 
     override fun titleRes(): Int = R.string.map
 

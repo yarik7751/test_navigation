@@ -9,7 +9,7 @@ import by.yarik.test_navigation.fragments.weather.city.adapter.CityAdapter
 import by.yarik.test_navigation.fragments.weather.city.model.CityModel
 import kotlinx.android.synthetic.main.fragment_city.*
 
-class CityFragment: BaseFragment<WeatherNavigation>() {
+class CityFragment: BaseFragment<WeatherNavigation>(R.layout.fragment_city) {
 
     private val cityModels = listOf(
         CityModel(1, "Minsk"),
@@ -20,8 +20,6 @@ class CityFragment: BaseFragment<WeatherNavigation>() {
         CityModel(6, "Brest"),
         CityModel(7, "Grodno")
     )
-
-    override fun layoutRes(): Int = R.layout.fragment_city
 
     override fun titleRes(): Int = R.string.city_title
 

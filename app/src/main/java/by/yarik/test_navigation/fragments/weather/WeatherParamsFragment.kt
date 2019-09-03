@@ -7,13 +7,11 @@ import by.yarik.test_navigation.fragments.base.BaseFragment
 import by.yarik.test_navigation.fragments.weather.city.model.CityModel
 import kotlinx.android.synthetic.main.fragment_weather_params.*
 
-class WeatherParamsFragment: BaseFragment<WeatherNavigation>() {
+class WeatherParamsFragment: BaseFragment<WeatherNavigation>(R.layout.fragment_weather_params) {
 
     companion object {
         const val ARGS_CITY = "ARGS_CITY"
     }
-
-    override fun layoutRes(): Int = R.layout.fragment_weather_params
 
     override fun titleRes(): Int = R.string.weather_params_title
 

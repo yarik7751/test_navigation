@@ -5,9 +5,7 @@ import by.yarik.test_navigation.R
 import by.yarik.test_navigation.activity.main.MainNavigation
 import by.yarik.test_navigation.fragments.base.BaseFragment
 
-class UserInfoFragment: BaseFragment<MainNavigation>() {
-
-    override fun layoutRes(): Int = R.layout.fragment_user_info
+class UserInfoFragment: BaseFragment<MainNavigation>(R.layout.fragment_user_info) {
 
     override fun titleRes(): Int = R.string.user_info_title
 

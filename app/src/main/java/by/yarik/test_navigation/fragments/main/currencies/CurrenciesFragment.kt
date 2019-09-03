@@ -9,11 +9,9 @@ import by.yarik.test_navigation.fragments.main.currencies.adapter.CurrenciesAdap
 import by.yarik.test_navigation.fragments.main.currencies.model.CurrencyModel
 import kotlinx.android.synthetic.main.fragment_currencies.*
 
-class CurrenciesFragment: BaseFragment<MainNavigation>() {
+class CurrenciesFragment: BaseFragment<MainNavigation>(R.layout.fragment_currencies) {
 
     private lateinit var currencies: List<CurrencyModel>
-
-    override fun layoutRes(): Int = R.layout.fragment_currencies
 
     override fun titleRes(): Int = R.string.currencies_title
 

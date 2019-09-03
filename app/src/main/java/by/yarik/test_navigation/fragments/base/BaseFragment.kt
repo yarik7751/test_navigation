@@ -2,9 +2,7 @@ package by.yarik.test_navigation.fragments.base
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.appcompat.widget.Toolbar
@@ -13,7 +11,7 @@ import by.yarik.test_navigation.R
 import by.yarik.test_navigation.activity.base.BaseActivity
 import by.yarik.test_navigation.activity.base.BaseNavigation
 
-abstract class BaseFragment<N: BaseNavigation>: Fragment() {
+abstract class BaseFragment<N: BaseNavigation>(@LayoutRes res: Int): Fragment(res) {
 
     companion object {
         const val LOG_LIFE_CYCLE = "life_cycle"
@@ -22,10 +20,6 @@ abstract class BaseFragment<N: BaseNavigation>: Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(LOG_LIFE_CYCLE, "onCreate: " + this::class.java.simpleName)
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(layoutRes(), container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,9 +40,6 @@ abstract class BaseFragment<N: BaseNavigation>: Fragment() {
             it.setTitle(titleRes())
         }
     }
-
-    @LayoutRes
-    abstract fun layoutRes(): Int
 
     @StringRes
     abstract fun titleRes(): Int
