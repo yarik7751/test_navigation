@@ -23,6 +23,8 @@ class CityFragment: BaseFragment<WeatherNavigation>() {
 
     override fun layoutRes(): Int = R.layout.fragment_city
 
+    override fun titleRes(): Int = R.string.city_title
+
     override fun initViews(savedInstanceState: Bundle?) {
 
         initCities()

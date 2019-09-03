@@ -9,7 +9,9 @@ interface WeatherNavigation: BaseNavigation {
 
     fun cityBack()
 
-    fun weatherParamsNext()
+    fun weatherParamsOpenMap(model: CityModel)
 
     fun weatherParamsBack()
+
+    fun mapBackToCity()
 }

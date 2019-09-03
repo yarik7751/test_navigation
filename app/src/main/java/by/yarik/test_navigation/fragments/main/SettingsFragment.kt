@@ -10,18 +10,12 @@ class SettingsFragment: BaseFragment<MainNavigation>() {
 
     override fun layoutRes(): Int = R.layout.fragment_settings
 
+    override fun titleRes(): Int = R.string.settings_title
+
     override fun initViews(savedInstanceState: Bundle?) {
 
-        btnNext.setOnClickListener {
-            getNavigation()?.settingsNext()
-        }
-
-        btnBack.setOnClickListener {
-            getNavigation()?.settingsBack()
-        }
-
-        btnHome.setOnClickListener {
-            getNavigation()?.settingsHome()
+        btnOpenWeather.setOnClickListener {
+            getNavigation()?.openWeatherScreen()
         }
     }
 }

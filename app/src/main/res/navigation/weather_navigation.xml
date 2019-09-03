@@ -15,5 +15,13 @@
 
     <fragment android:id="@+id/weatherParamsFragment"
               android:name="by.yarik.test_navigation.fragments.weather.WeatherParamsFragment"
-              android:label="WeatherParamsFragment"/>
+              android:label="WeatherParamsFragment">
+        <action
+                android:id="@+id/action_weatherParamsFragment_to_mapFragment"
+                app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/mapFragment"
+            android:name="by.yarik.test_navigation.fragments.weather.MapFragment"
+            android:label="MapFragment" />
 </navigation>
