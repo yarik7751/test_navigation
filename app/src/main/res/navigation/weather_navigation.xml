@@ -8,14 +8,15 @@
 
         <action android:id="@+id/action_cityFragment_to_weatherParamsFragment"
                 app:destination="@id/weatherParamsFragment">
-
-            <argument android:name="weatherType" app:argType="string" android:defaultValue="weather"/>
         </action>
     </fragment>
 
     <fragment android:id="@+id/weatherParamsFragment"
               android:name="by.yarik.test_navigation.fragments.weather.WeatherParamsFragment"
               android:label="WeatherParamsFragment">
+
+        <argument android:name="weatherModel" app:argType="by.yarik.test_navigation.fragments.weather.city.model.CityModel"/>
+
         <action
                 android:id="@+id/action_weatherParamsFragment_to_mapFragment"
                 app:destination="@id/mapFragment" />

@@ -9,10 +9,6 @@ import kotlinx.android.synthetic.main.fragment_weather_params.*
 
 class WeatherParamsFragment: BaseFragment<WeatherNavigation>(R.layout.fragment_weather_params) {
 
-    companion object {
-        const val ARGS_CITY = "ARGS_CITY"
-    }
-
     override fun titleRes(): Int = R.string.weather_params_title
 
     override fun initViews(savedInstanceState: Bundle?) {
@@ -38,8 +34,7 @@ class WeatherParamsFragment: BaseFragment<WeatherNavigation>(R.layout.fragment_w
 
     private fun getCityModel(): CityModel {
         return arguments?.let {
-            val model = it.getParcelable<CityModel>(ARGS_CITY)
-            model ?: CityModel()
+            WeatherParamsFragmentArgs.fromBundle(it).weatherModel
         } ?: CityModel()
     }
 }
