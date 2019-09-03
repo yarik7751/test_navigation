@@ -20,8 +20,7 @@ class WeatherActivity: BaseActivity(), WeatherNavigation {
     }
 
     override fun cityNext(model: CityModel) {
-        val args = Bundle()
-        args.putParcelable(WeatherParamsFragment.ARGS_CITY, model)
+        val args = getCityModelArgs(model)
         navController.navigate(R.id.action_cityFragment_to_weatherParamsFragment, args)
     }
 
@@ -29,10 +28,22 @@ class WeatherActivity: BaseActivity(), WeatherNavigation {
         finish()
     }
 
-    override fun weatherParamsNext() {
+    override fun weatherParamsOpenMap(model: CityModel) {
+        val args = getCityModelArgs(model)
+        navController.navigate(R.id.action_weatherParamsFragment_to_mapFragment, args)
     }
 
     override fun weatherParamsBack() {
         navController.popBackStack()
+    }
+
+    private fun getCityModelArgs(model: CityModel): Bundle {
+        val args = Bundle()
+        args.putParcelable(WeatherParamsFragment.ARGS_CITY, model)
+        return args
+    }
+
+    override fun mapBackToCity() {
+        navController.popBackStack(R.id.cityFragment, true)
     }
 }

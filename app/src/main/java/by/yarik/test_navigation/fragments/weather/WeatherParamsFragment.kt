@@ -21,8 +21,11 @@ class WeatherParamsFragment: BaseFragment<WeatherNavigation>() {
 
         initTitle()
 
-        btnNext.setOnClickListener {
-            getNavigation()?.weatherParamsNext()
+        btnOpenMap.setOnClickListener {
+            val cityModel = getCityModel()
+            if(cityModel.title.isNotEmpty()) {
+                getNavigation()?.weatherParamsOpenMap(cityModel)
+            }
         }
 
         btnBack.setOnClickListener {
