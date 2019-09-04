@@ -32,7 +32,7 @@ class CityFragment: BaseFragment<WeatherNavigation>(R.layout.fragment_city), Lif
         viewModel.getCities()
     }
 
-    private fun updateCities(): Observer<List<CityModel>> = Observer {
+    private fun updateCities() = Observer<List<CityModel>> {
             rvCities.adapter = CityAdapter(it) {
                 val args = CityFragmentDirections.actionCityFragmentToWeatherParamsFragment(it)
                 getNavigation()?.cityNext(args)

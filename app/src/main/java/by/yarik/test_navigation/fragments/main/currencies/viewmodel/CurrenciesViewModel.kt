@@ -1,26 +1,26 @@
-package by.yarik.test_navigation.fragments.weather.city.viewmodel
+package by.yarik.test_navigation.fragments.main.currencies.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import by.yarik.test_navigation.fragments.weather.city.model.CityModel
+import by.yarik.test_navigation.fragments.main.currencies.model.CurrencyModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CityViewModel : ViewModel(), LifecycleObserver {
+class CurrenciesViewModel: ViewModel(), LifecycleObserver {
 
-    val citiesLiveData: MutableLiveData<List<CityModel>> by lazy {
-        MutableLiveData<List<CityModel>>()
+    val currenciesLiveData: MutableLiveData<List<CurrencyModel>> by lazy {
+        MutableLiveData<List<CurrencyModel>>()
     }
 
-    fun getCities() {
+    fun updateCurrencies() {
         viewModelScope.launch {
             val result = get()
-            citiesLiveData.value = result
+            currenciesLiveData.value = result
         }
     }
 
@@ -28,13 +28,9 @@ class CityViewModel : ViewModel(), LifecycleObserver {
         try {
             delay(1000)
             val list = listOf(
-                CityModel(1, "Minsk"),
-                CityModel(2, "Baranovichi"),
-                CityModel(3, "Pinsk"),
-                CityModel(4, "Lahovichi"),
-                CityModel(5, "Polotsk"),
-                CityModel(6, "Brest"),
-                CityModel(7, "Grodno")
+                CurrencyModel("USD", "2.1080", "2.1150"),
+                CurrencyModel("EUR", "2.3120", "2.3200"),
+                CurrencyModel("100 RUB", "3.1350", "2.1950")
             )
 
             if (list.size > 5) throw Exception("example")
@@ -42,7 +38,7 @@ class CityViewModel : ViewModel(), LifecycleObserver {
             list
         } catch (exception: Exception) {
             Log.d("", "")
-            emptyList<CityModel>()
+            emptyList<CurrencyModel>()
         }
     }
 }
