@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/main_navigation" app:startDestination="@id/userInfoFragment">
+
+    <fragment android:id="@+id/userInfoFragment" android:name="com.example.presentation.fragments.main.UserInfoFragment"
+              android:label="UserInfoFragment"/>
+
+    <fragment android:id="@+id/settingsFragment" android:name="com.example.presentation.fragments.main.SettingsFragment"
+              android:label="SettingsFragment">
+
+        <action
+                android:id="@+id/action_settingsFragment_to_weatherActivity"
+                app:destination="@id/weatherActivity"
+                app:launchSingleTop="true" />
+
+    </fragment>
+
+    <fragment android:id="@+id/currenciesFragment" android:name="com.example.presentation.fragments.main.currencies.CurrenciesFragment"
+              android:label="CurrenciesFragment"/>
+
+    <activity android:id="@+id/weatherActivity" android:name="com.example.presentation.activity.weather.WeatherActivity"
+              android:label="WeatherActivity"/>
+</navigation>

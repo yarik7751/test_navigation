@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">presentation</string>
+
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="finish_dialog_title">Exit</string>
+    <string name="finish_dialog_message">Are you sure?</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="home">Home</string>
+    <string name="user_info_title">User Info</string>
+    <string name="currencies_title">Currencies</string>
+    <string name="settings_title">Settings</string>
+    <string name="city_title">City</string>
+    <string name="weather_params_title">Weather params</string>
+    <string name="name_title">Name</string>
+    <string name="last_name_title">Last name</string>
+    <string name="age_title">Age</string>
+    <string name="currency_title">Currency</string>
+    <string name="purchase_title">Purchase</string>
+    <string name="sale_title">Sale</string>
+    <string name="open_weather">Open weather</string>
+    <string name="map">Map</string>
+    <string name="google_maps_key">AIzaSyBtZ4moZN0t5h7lo6rB9mkgAO14UIpQWmQ</string>
+    <string name="back_to_city">Back to city</string>
+</resources>
