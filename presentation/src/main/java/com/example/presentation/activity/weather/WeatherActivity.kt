@@ -43,7 +43,7 @@ class WeatherActivity: BaseActivity(),
     }
 
     override fun cityBack() {
-        navigationCommands.back()
+        finish()
     }
 
     override fun weatherParamsOpenMap(model: CityModel) {
