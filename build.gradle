@@ -28,3 +28,10 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    retrofitLoggingInteceptorVersion = "3.9.0"
+    retrofitVersion = "2.4.0"
+
+    gson = "2.8.5"
+}

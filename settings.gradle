@@ -1,1 +1,1 @@
-include ':app', ':navigation-api', ':common', ':navigation-impl', ':presentation'
+include ':app', ':navigation-api', ':common', ':navigation-impl', ':presentation', ':domain-api', ':domain-impl', ':data-api', ':data-impl', ':remote'
