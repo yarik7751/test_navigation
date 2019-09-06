@@ -4,5 +4,7 @@ sealed class Command{
     object OpenCityCommand: Command()
 
     object OpenWeatherParamsCommand: Command()
+
+    object OpenMapCommand: Command()
 }
 

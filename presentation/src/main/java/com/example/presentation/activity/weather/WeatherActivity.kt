@@ -43,21 +43,21 @@ class WeatherActivity: BaseActivity(),
     }
 
     override fun cityBack() {
-        finish()
+        navigationCommands.back()
     }
 
     override fun weatherParamsOpenMap(model: CityModel) {
         val args = Bundle()
         args.putParcelable(MapFragment.ARGS_CITY, model)
-        navController.navigate(R.id.mapFragment, args)
+        navigationCommands.navigateTo(Command.OpenMapCommand, args)
     }
 
     override fun weatherParamsBack() {
-        navController.popBackStack()
+        navigationCommands.back()
     }
 
     override fun mapBackToCity() {
-        navController.popBackStack(R.id.cityFragment, true)
+        navigationCommands.backTo(Command.OpenCityCommand)
     }
 
     override fun onResumeFragments() {
