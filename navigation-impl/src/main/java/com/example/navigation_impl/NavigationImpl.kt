@@ -42,11 +42,11 @@ class NavigationImpl @Inject constructor(): NavigationInit, NavigationCommands {
             }
 
             is Command.OpenWeatherParamsCommand -> {
-
+                navController?.popBackStack(R.id.weatherParamsFragment, true)
             }
 
             is Command.OpenMapCommand -> {
-
+                navController?.popBackStack(R.id.mapFragment, true)
             }
         }
     }
