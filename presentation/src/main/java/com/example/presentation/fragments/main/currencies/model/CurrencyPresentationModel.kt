@@ -1,6 +1,6 @@
 package com.example.presentation.fragments.main.currencies.model
 
-data class CurrencyModel (
+data class CurrencyPresentationModel (
     val title: String,
     val purchase: String,
     val sale: String,

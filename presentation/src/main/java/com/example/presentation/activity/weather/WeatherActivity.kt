@@ -28,8 +28,8 @@ class WeatherActivity: BaseActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         PresentationComponent
-            .init((applicationContext as BaseApp).getNavigationProvider())
-            .inject(this)
+            .init((applicationContext as BaseApp).getAppProvider())
+            ?.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather)
 

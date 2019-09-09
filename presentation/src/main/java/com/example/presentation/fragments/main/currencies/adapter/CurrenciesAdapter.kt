@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import com.example.presentation.R
-import com.example.presentation.fragments.main.currencies.model.CurrencyModel
+import com.example.presentation.fragments.main.currencies.model.CurrencyPresentationModel
 import kotlinx.android.synthetic.main.item_currency.view.*
 
 class CurrenciesAdapter(
-    val models: List<CurrencyModel>
+    val models: List<CurrencyPresentationModel>
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {

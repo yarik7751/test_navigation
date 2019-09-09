@@ -31,7 +31,9 @@ task clean(type: Delete) {
 
 ext {
     retrofitLoggingInteceptorVersion = "3.9.0"
-    retrofitVersion = "2.4.0"
+    retrofitVersion = "2.6.0"
+    dagger2Version = "2.22.1"
+    kotlinCoroutineVersion = "1.0.1"
 
     gson = "2.8.5"
 }

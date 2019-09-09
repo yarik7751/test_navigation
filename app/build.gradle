@@ -28,6 +28,11 @@ dependencies {
     implementation project(path: ':presentation')
     implementation project(path: ':navigation-impl')
     implementation project(path: ':navigation-api')
+    implementation project(path: ':data-api')
+    implementation project(path: ':data-impl')
+    implementation project(path: ':domain-api')
+    implementation project(path: ':domain-impl')
+    implementation project(path: ':remote')
 
     def androidx_version = '1.0.2'
 
@@ -54,7 +59,7 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
 
-    kapt "com.google.dagger:dagger-compiler:2.22.1"
-    kapt "com.google.dagger:dagger-android-processor:2.22.1"
-    implementation "com.google.dagger:dagger:2.22.1"
+    kapt "com.google.dagger:dagger-compiler:$dagger2Version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger2Version"
+    implementation "com.google.dagger:dagger:$dagger2Version"
 }

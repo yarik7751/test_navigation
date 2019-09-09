@@ -2,5 +2,5 @@ package com.example.common
 
 interface BaseApp {
 
-    fun getNavigationProvider(): NavigationProvider
+    fun getAppProvider(): AppProvider
 }

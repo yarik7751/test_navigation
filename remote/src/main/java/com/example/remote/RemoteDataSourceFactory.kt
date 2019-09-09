@@ -1,6 +1,7 @@
 package com.example.remote
 
 import com.example.common.network.RestApi
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -8,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RemoteDataSourceFactory {
 
-    private const val BASE_URL = "https://testapi.com"
+    private const val BASE_URL = " http://www.nbrb.by/API/"
 
     fun makeApiService(debug: Boolean): RestApi {
         val logging = HttpLoggingInterceptor()
@@ -26,6 +27,7 @@ object RemoteDataSourceFactory {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(onHttpClient)
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(RestApi::class.java)
     }

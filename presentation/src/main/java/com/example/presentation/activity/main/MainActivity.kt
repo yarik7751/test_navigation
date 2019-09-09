@@ -5,8 +5,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.example.common.BaseApp
 import com.example.presentation.R
 import com.example.presentation.activity.base.BaseActivity
+import com.example.presentation.di.component.PresentationComponent
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity(),
@@ -15,6 +17,8 @@ class MainActivity : BaseActivity(),
     lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        PresentationComponent.init((applicationContext as BaseApp).getAppProvider())
+            ?.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 

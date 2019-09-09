@@ -3,15 +3,19 @@
         xmlns:tools="http://schemas.android.com/tools"
         package="by.yarik.test_navigation">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:allowBackup="true"
             android:name=".BaseApplication"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
+            android:usesCleartextTraffic="true"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            tools:ignore="GoogleAppIndexingWarning">
+            tools:ignore="GoogleAppIndexingWarning"
+            tools:targetApi="m">
 
         <meta-data
                 android:name="com.google.android.geo.API_KEY"

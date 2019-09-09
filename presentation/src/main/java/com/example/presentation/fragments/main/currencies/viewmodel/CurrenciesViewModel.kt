@@ -1,20 +1,28 @@
 package com.example.presentation.fragments.main.currencies.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.presentation.fragments.main.currencies.model.CurrencyModel
+import com.example.domain.CurrenciesInteractor
+import com.example.presentation.di.component.PresentationComponent
+import com.example.presentation.fragments.main.currencies.model.CurrencyPresentationModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 class CurrenciesViewModel: ViewModel(), LifecycleObserver {
 
-    val currenciesLiveData: MutableLiveData<List<CurrencyModel>> by lazy {
-        MutableLiveData<List<CurrencyModel>>()
+    @Inject
+    lateinit var currenciesInteractor: CurrenciesInteractor
+
+    init {
+        PresentationComponent.get()?.inject(this)
+    }
+
+    val currenciesLiveData: MutableLiveData<List<CurrencyPresentationModel>> by lazy {
+        MutableLiveData<List<CurrencyPresentationModel>>()
     }
 
     fun updateCurrencies() {
@@ -26,31 +34,10 @@ class CurrenciesViewModel: ViewModel(), LifecycleObserver {
 
     suspend fun get() = withContext(Dispatchers.IO) {
         try {
-            delay(1000)
-            val list = listOf(
-                CurrencyModel(
-                    "USD",
-                    "2.1080",
-                    "2.1150"
-                ),
-                CurrencyModel(
-                    "EUR",
-                    "2.3120",
-                    "2.3200"
-                ),
-                CurrencyModel(
-                    "100 RUB",
-                    "3.1350",
-                    "2.1950"
-                )
-            )
-
-            if (list.size > 5) throw Exception("example")
-
-            list
+            val result = currenciesInteractor.getCurrenciesAsync()
+            result
         } catch (exception: Exception) {
-            Log.d("", "")
-            emptyList<CurrencyModel>()
+            emptyList<CurrencyPresentationModel>()
         }
     }
 }

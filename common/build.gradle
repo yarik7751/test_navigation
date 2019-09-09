@@ -29,6 +29,8 @@ android {
 dependencies {
 
     implementation project(path: ':navigation-api')
+    implementation project(path: ':data-api')
+    implementation project(path: ':domain-api')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
