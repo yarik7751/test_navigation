@@ -9,8 +9,8 @@ import com.example.presentation.R
 import com.example.presentation.activity.main.MainNavigation
 import com.example.presentation.fragments.base.BaseFragment
 import com.example.presentation.fragments.main.currencies.adapter.CurrenciesAdapter
-import com.example.presentation.fragments.main.currencies.model.CurrencyPresentationModel
 import com.example.presentation.fragments.main.currencies.viewmodel.CurrenciesViewModel
+import com.example.presentation_api.CurrencyPresentationModel
 import kotlinx.android.synthetic.main.fragment_currencies.*
 
 class CurrenciesFragment : BaseFragment<MainNavigation>(R.layout.fragment_currencies),

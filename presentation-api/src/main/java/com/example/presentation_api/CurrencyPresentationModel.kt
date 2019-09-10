@@ -1,4 +1,4 @@
-package com.example.presentation.fragments.main.currencies.model
+package com.example.presentation_api
 
 data class CurrencyPresentationModel (
     val title: String,

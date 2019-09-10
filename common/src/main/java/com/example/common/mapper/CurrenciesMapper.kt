@@ -2,6 +2,7 @@ package com.example.common.mapper
 
 import com.example.data_api.dto.CurrenciesDto
 import com.example.domain.model.CurrencyModel
+import com.example.presentation_api.CurrencyPresentationModel
 
 object CurrenciesMapper {
 
@@ -18,5 +19,16 @@ object CurrenciesMapper {
         )
     }
 
-    private fun modelToPreentationModel(model: CurrencyModel): Currency
+    fun currenciesModelsMapping(models: List<CurrencyModel>): List<CurrencyPresentationModel> =
+        models.map { modelToPresentationModel(it) }
+
+
+    private fun modelToPresentationModel(model: CurrencyModel): CurrencyPresentationModel =
+        CurrencyPresentationModel(
+            title = model.title,
+            titleType = model.titleType,
+            sale = model.sale,
+            purchase = model.purchase
+        )
+
 }

@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/navigation-api" />
             <option value="$PROJECT_DIR$/navigation-impl" />
             <option value="$PROJECT_DIR$/presentation" />
+            <option value="$PROJECT_DIR$/presentation-api" />
             <option value="$PROJECT_DIR$/remote" />
           </set>
         </option>

@@ -3,14 +3,15 @@ package com.example.presentation.fragments.main.currencies.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import com.example.presentation.R
-import com.example.presentation.fragments.main.currencies.model.CurrencyPresentationModel
+import com.example.presentation_api.CurrencyPresentationModel
 import kotlinx.android.synthetic.main.item_currency.view.*
 
 class CurrenciesAdapter(
-    val models: List<CurrencyPresentationModel>
+    private val models: List<CurrencyPresentationModel>
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -60,8 +61,8 @@ class CurrenciesAdapter(
     override fun getItemCount(): Int = models.size
 
     class CurrenciesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val tvTitle = itemView.tvCurrencyTitle
-        val tvPurchase = itemView.tvCurrencyPurchase
-        val tvSale = itemView.tvCurrencySale
+        val tvTitle: TextView = itemView.tvCurrencyTitle
+        val tvPurchase: TextView = itemView.tvCurrencyPurchase
+        val tvSale: TextView = itemView.tvCurrencySale
     }
 }
